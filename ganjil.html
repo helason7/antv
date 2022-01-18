@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            body {
+                text-align: center;
+            }
+            h2, h4{
+                margin: 0;
+            }
+            p#demo {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Penginputan Bilangan yang akan Dicek -->
+        <p>Bilangan <input type="number" id="myNumber"> <button onclick="cekGanjilGenap()">Go</button></p>
+        <p id="demo"></p>
+        <script>
+            //Penghitungan dan Pengecekan Hasil Modulo
+            function cekGanjilGenap(){
+            let text = "";
+                var bilangan = document.getElementById("myNumber").value;
+                var hasil = bilangan*bilangan;
+                var loop = 1;
+
+                    for (var x = 0; x < hasil; x++) {
+
+                        for (var i = 0; i < loop; i++) {                            
+                            text += hasil + ' ';
+                        hasil = hasil - 1;
+                        }
+                        loop +=2;
+                        text += "<br>";
+                        console.log('hasil '+hasil);
+
+                    }
+                    document.getElementById("demo").innerHTML = text;
+            }
+        </script>
+    </body>
+</html>
